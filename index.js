@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const morgan = require("morgan");
 const cors = require("cors");
 const dotenv = require("dotenv").config({
   path: `${__dirname}/.env`,
@@ -14,11 +13,6 @@ app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "./client/dist")));
-}
-
-//dev log
-if (process.env.NODE_ENV === "dev") {
-  app.use(morgan("short"));
 }
 
 //error log middleware
