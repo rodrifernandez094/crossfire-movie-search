@@ -1,16 +1,15 @@
-import { useEffect } from "react";
 import { Container } from "../styles/Common.style";
 import styled from "styled-components";
 import Trending from "../components/Trending";
 import Hero from "../components/Hero/Hero";
+import { useQuery } from "react-query";
+import Spinner from "../components/Spinner";
+import { getConfig } from "../apiCalls";
 
 const Homepage = () => {
-  useEffect(() => {
-    fetch("/api/config")
-      .then((res) => res.json())
-      .then((data) => localStorage.setItem("config", JSON.stringify(data)))
-      .catch((err) => console.log(err));
-  }, []);
+  const { data, isLoading } = useQuery(["config"], () => getConfig());
+  if (isLoading) return <Spinner />;
+  localStorage.setItem("config", JSON.stringify(data));
 
   const Wrapper = styled.div`
     display: flex;
