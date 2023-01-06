@@ -33,7 +33,7 @@ const Card = (props) => {
   `;
 
   const config = JSON.parse(localStorage.getItem("config"));
-  const imgUrl = `${config.images.secure_base_url}${config.images.poster_sizes[3]}/${poster_path}`;
+  const imgUrl = `${config?.images.secure_base_url}${config?.images?.poster_sizes[3]}/${poster_path}`;
   return (
     <Card>
       <ImgContainer>

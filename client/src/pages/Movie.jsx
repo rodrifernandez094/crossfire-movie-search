@@ -15,8 +15,8 @@ const Movie = () => {
   const { id } = useParams();
   const { data, status } = useQuery(["movie", id], () => getMovie(id));
   const config = JSON.parse(localStorage.getItem("config"));
-  const backdropsUrl = `${config.images.secure_base_url}${config.images.backdrop_sizes[3]}`;
-  const bgImage = `${backdropsUrl}/${data?.images.backdrops[0]?.file_path}`;
+  const backdropsUrl = `${config?.images?.secure_base_url}${config?.images?.backdrop_sizes[3]}`;
+  const bgImage = `${backdropsUrl}/${data?.images?.backdrops[0]?.file_path}`;
 
   return (
     <MovieContainer background={bgImage}>

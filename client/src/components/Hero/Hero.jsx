@@ -5,7 +5,7 @@ import { Title, Subtitle, Button, Container, Banner } from "./hero.styles";
 
 const Hero = () => {
   const config = JSON.parse(localStorage.getItem("config"));
-  const backdropsUrl = `${config.images.secure_base_url}${config.images.backdrop_sizes[3]}`;
+  const backdropsUrl = `${config?.images?.secure_base_url}${config?.images.backdrop_sizes[3]}`;
 
   const { data, isError, error } = useQuery("popularMovies", getPopularMovies);
   if (isError) console.log(error);
