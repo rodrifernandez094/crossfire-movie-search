@@ -6,7 +6,7 @@
   "scripts": {
     "install_client": "cd client && npm install",
     "build_client": "cd client && npm run build",
-    "build": "npm run install_client && npm run build_client",
+    "build": "npm run install_client && npm run build",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
