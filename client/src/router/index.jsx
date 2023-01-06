@@ -13,17 +13,14 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Homepage />,
-        errorElement: <NotFound error="Not Found" />,
       },
       {
         path: "/movies/:query",
         element: <SearchResults />,
-        errorElement: <NotFound error="Not Found" />,
       },
       {
         path: "/movie/:id",
         element: <Movie />,
-        errorElement: <NotFound error="Not Found" />,
       },
     ],
   },
