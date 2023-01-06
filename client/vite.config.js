@@ -5,7 +5,7 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   server: {
     proxy: {
-      "/api/": `${process.env.DOMAIN}`,
+      "/api/": "https://crossfire-movie-search.cyclic.app",
     },
   },
   plugins: [react()],
