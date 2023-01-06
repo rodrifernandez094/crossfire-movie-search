@@ -4,7 +4,9 @@
   "description": "Fetch and display info about movies using the TMDb api.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "install_client": "cd client && npm install",
+    "build_client": "cd client && npm run build",
+    "build": "npm run install_client && npm run build_client",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
