@@ -1,4 +1,4 @@
-import defaultMoviePoster from "../assets/movie-poster.png";
+import defaultMoviePoster from "../assets/images/movie-poster.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
