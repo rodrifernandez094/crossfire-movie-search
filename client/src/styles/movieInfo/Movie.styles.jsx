@@ -21,6 +21,10 @@ export const Profile = styled.div`
   align-items: center;
   margin-top: 5rem;
   padding: 3rem 2rem;
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding: 3rem 0.5rem;
+  }
 `;
 
 export const InfoContainer = styled.div`
@@ -28,6 +32,9 @@ export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const MetaData = styled.div`
@@ -54,4 +61,10 @@ export const Credits = styled.div`
 export const CreditsText = styled.p`
   color: #5c5c5c;
   font-size: 0.9em;
+`;
+
+export const Title = styled.h1`
+  @media (max-width: 768px) {
+    font-size: 1.8em;
+  }
 `;

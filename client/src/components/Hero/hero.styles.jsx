@@ -26,6 +26,11 @@ export const Banner = styled.div`
   justify-content: center;
   width: 60%;
   height: 100%;
+  @media (max-width: 768px) {
+    text-align: center;
+    align-items: center;
+    width: 90%;
+  }
   @media (max-width: 480px) {
     width: 100%;
     padding: 1rem;
@@ -44,7 +49,7 @@ export const Subtitle = styled.span`
   padding: 2rem 0;
 `;
 
-export const Button = styled.a`
+export const Button = styled.button`
   color: #fff;
   border: 0;
   padding: 0.6rem 2rem;

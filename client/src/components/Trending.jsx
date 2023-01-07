@@ -7,15 +7,18 @@ import { Wrapper } from "../styles/Common.style";
 const Trending = () => {
   const Container = styled.div`
     width: 100%;
-    text-align: left;
     padding: 3.5rem 0;
   `;
 
-  const Title = styled.span`
+  const Title = styled.h2`
     font-size: 1.25em;
     font-weight: 600;
     text-align: left;
     padding: 0 3rem;
+    @media (max-width: 768px) {
+      margin: 0 auto;
+      text-align: center;
+    }
   `;
 
   const { data, isError, error } = useQuery("popularMovies", getPopularMovies);
@@ -27,7 +30,7 @@ const Trending = () => {
       <Wrapper>
         {data?.results &&
           data.results?.slice(0, 10).map((movie) => {
-            return <Card movieData={movie} />;
+            return <Card key={movie.id} movieData={movie} />;
           })}
       </Wrapper>
     </Container>

@@ -12,6 +12,9 @@ export const Navbar = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 2rem 2.25rem;
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
 `;
 
 export const SearchBar = styled.form`

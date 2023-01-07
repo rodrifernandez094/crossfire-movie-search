@@ -9,6 +9,7 @@ import {
   MetaData,
   Credits,
   CreditsText,
+  Title,
 } from "../styles/movieInfo/Movie.styles";
 import Spinner from "../components/Spinner";
 const Movie = () => {
@@ -24,7 +25,7 @@ const Movie = () => {
       {status === "success" && (
         <Profile>
           <InfoContainer>
-            <h1> {data?.original_title} </h1>
+            <Title> {data?.original_title} </Title>
             <MetaData className="d-flex justify-content-between text-muted w-50 meta">
               {data?.genres[0] && <p>{data?.genres[0]?.name}</p>}
               <p>{data?.release_date}</p>
