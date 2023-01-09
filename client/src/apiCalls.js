@@ -19,7 +19,10 @@ export const getMovie = async (id) => {
 
 export const getConfig = async () => {
   const response = await fetch("/api/config");
-  return response.json();
+  const data = await response.json();
+  localStorage.setItem("config", JSON.stringify(data));
+
+  return data;
 };
 
 export const getPopularMovies = async () => {
