@@ -17,10 +17,12 @@ export const router = createBrowserRouter([
       {
         path: "/movies/:query",
         element: <SearchResults />,
+        errorElement: <NotFound />,
       },
       {
         path: "/movie/:id",
         element: <Movie />,
+        errorElement: <NotFound />,
       },
     ],
   },
