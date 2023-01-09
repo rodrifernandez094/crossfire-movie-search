@@ -30,6 +30,7 @@ const SearchResults = () => {
     },
     {
       getNextPageParam: (lastPage) => lastPage.page + 1,
+      keepPreviousData: true,
     }
   );
 
