@@ -12,6 +12,7 @@ import {
   Title,
 } from "../styles/movieInfo/Movie.styles";
 import Spinner from "../components/Spinner";
+
 const Movie = () => {
   const { id } = useParams();
   const { data, status } = useQuery(["movie", id], () => getMovie(id), {
@@ -52,7 +53,9 @@ const Movie = () => {
                 <p>Actors</p>
                 {data?.credits?.cast[0] &&
                   data?.credits?.cast.slice(0, 3).map((actor) => {
-                    return <CreditsText> {actor?.name} </CreditsText>;
+                    return (
+                      <CreditsText key={actor?.name}>{actor?.name}</CreditsText>
+                    );
                   })}
               </div>
             </Credits>

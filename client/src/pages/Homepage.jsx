@@ -7,10 +7,6 @@ import Spinner from "../components/Spinner";
 import { getConfig } from "../apiCalls";
 
 const Homepage = () => {
-  const { data, isLoading } = useQuery(["config"], () => getConfig());
-  if (isLoading) return <Spinner />;
-  localStorage.setItem("config", JSON.stringify(data));
-
   const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -20,10 +16,13 @@ const Homepage = () => {
     height: 100vh;
   `;
 
+  const { data, isLoading } = useQuery(["config"], () => getConfig());
+  if (isLoading) return <Spinner />;
+
   return (
     <Container>
       <Wrapper>
-        <Hero />
+        <Hero config={data} />
       </Wrapper>
       <Trending />
     </Container>

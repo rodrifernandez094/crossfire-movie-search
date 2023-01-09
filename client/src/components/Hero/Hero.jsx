@@ -4,10 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { Title, Subtitle, Button, Container, Banner } from "./hero.styles";
 import NotFound from "../../pages/NotFound";
 
-const Hero = () => {
+const Hero = ({ config }) => {
   const navigate = useNavigate();
-  const config = JSON.parse(localStorage.getItem("config"));
-  const backdropsUrl = `${config?.images?.secure_base_url}${config?.images.backdrop_sizes[3]}`;
 
   const { data, isError, error } = useQuery("popularMovies", getPopularMovies);
   if (isError) return <NotFound error={error} />;
@@ -15,6 +13,8 @@ const Hero = () => {
   const title = data?.results[0]?.original_title;
   const subtitle = data?.results[0]?.overview;
   const movieId = data?.results[0]?.id;
+
+  const backdropsUrl = `${config?.images?.secure_base_url}${config?.images.backdrop_sizes[3]}`;
   const bgImage = `${backdropsUrl}/${data?.results[0]?.backdrop_path}`;
 
   return (
