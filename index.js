@@ -24,6 +24,14 @@ app.use((error, req, res, next) => {
 
 app.use(moviesRoutes);
 
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/dist"), function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
+
 app.use((req, res) => {
   const error = new Error(`Not Found - ${req.originalUrl}`);
   console.log(error);
