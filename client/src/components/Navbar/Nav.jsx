@@ -10,6 +10,7 @@ const Nav = () => {
     e.preventDefault();
     localStorage.setItem("query", query);
     navigate(`/movies/${query}`);
+    setQuery("");
   };
 
   return (
@@ -20,6 +21,7 @@ const Nav = () => {
           <Search
             placeholder="Search"
             onChange={(e) => setQuery(e.target.value)}
+            value={query}
           />
         </SearchBar>
       </Navbar>
